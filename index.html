@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support de cours d’intelligence artificielle pour les étudiants en design graphique B2 et B3.">
+  <title>IA générative · B2 & B3 Design graphique</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./vendor/marked.umd.js" defer></script>
+  <script src="./vendor/purify.min.js" defer></script>
+  <script src="./local-files.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main id="stage" aria-label="Présentation du cours">
+    <div id="slide-wrap">
+      <article id="slide" aria-labelledby="slide-title" tabindex="-1">
+        <aside class="side-strip" aria-label="Repères de la présentation"><span class="side-caption">INTELLIGENCE ARTIFICIELLE <span aria-hidden="true">/</span> DESIGN GRAPHIQUE</span><span id="slide-page" aria-live="polite"></span></aside>
+        <div class="slide-content">
+          <header class="slide-heading"><h1 id="slide-title">Chargement…</h1></header>
+          <div id="slide-body"><div id="text-area"><div id="text-flow" class="prose"></div></div></div>
+        </div>
+        <figure id="visual" hidden>
+            <button id="image-open" aria-label="Agrandir le visuel"><img id="slide-image" alt=""></button>
+            <div id="image-controls" hidden><button id="image-prev" aria-label="Visuel précédent">←</button><span id="image-count"></span><button id="image-next" aria-label="Visuel suivant">→</button></div>
+        </figure>
+      </article>
+    </div>
+    <div id="empty" hidden><h1>Le cours arrive bientôt.</h1><p>Les présentations disponibles apparaîtront ici.</p><button id="empty-folder" class="button">Recharger le dossier</button></div>
+    <section id="local-start" hidden aria-labelledby="local-title">
+      <h1 id="local-title">Votre cours,<br>directement ici.</h1>
+      <p>Sélectionnez le dossier <strong>B2&B3DG</strong> pour ouvrir vos slides et leurs images.</p>
+      <button id="open-folder" class="button primary-button">Ouvrir le dossier du cours <span aria-hidden="true">↗</span></button>
+      <p id="local-help" class="local-help">Les modifications des fichiers seront relues automatiquement.</p>
+      <button id="import-folder" class="text-button">Importer une copie du dossier</button>
+      <p id="local-error" role="status"></p>
+    </section>
+    <input id="folder-input" type="file" webkitdirectory multiple hidden aria-label="Choisir le dossier B2&B3DG">
+  </main>
+
+  <nav id="presentation-controls" aria-label="Commandes de la présentation" hidden>
+    <button id="previous" class="icon-button" aria-label="Slide précédente">←</button>
+    <button id="next" class="icon-button" aria-label="Slide suivante">→</button>
+    <span class="controls-divider" aria-hidden="true"></span>
+    <button id="contents-button" class="button" aria-haspopup="dialog" aria-controls="contents">Sommaire</button>
+    <button id="folder-button" class="button">Recharger le dossier</button>
+  </nav>
+  <span id="status" class="sr-only" role="status"></span>
+
+  <dialog id="contents" aria-labelledby="contents-title">
+    <div class="dialog-heading"><h2 id="contents-title">Sommaire</h2><button id="contents-close" class="icon-button" aria-label="Fermer le sommaire">×</button></div>
+    <div id="course-list"></div>
+    <p class="dialog-note">Choisissez un chapitre pour reprendre la présentation.</p>
+  </dialog>
+  <dialog id="lightbox" aria-label="Visuel agrandi"><button id="lightbox-close" class="icon-button" aria-label="Fermer le visuel">×</button><img id="large-image" alt=""></dialog>
+</body>
+</html>
